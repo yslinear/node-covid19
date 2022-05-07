@@ -18,18 +18,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      city: null,
-      district: null,
-    }
-  },
-  watch: {
-    city(newCity) {
-      console.log(newCity)
-      this.$store.dispatch('area/fetchDistricts', newCity)
-    },
-  },
   mounted() {
     this.$store.dispatch('area/fetchCities')
   },
@@ -39,6 +27,23 @@ export default {
     },
     districts() {
       return this.$store.state.area.districts
+    },
+    city: {
+      get() {
+        return this.$store.state.area.city
+      },
+      set(value) {
+        this.$store.dispatch('area/setCity', value)
+        this.$store.dispatch('area/setDistrict', null)
+      },
+    },
+    district: {
+      get() {
+        return this.$store.state.area.district
+      },
+      set(value) {
+        this.$store.dispatch('area/setDistrict', value)
+      },
     },
   },
 }

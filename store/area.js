@@ -1,6 +1,8 @@
 export const state = () => ({
   cities: [],
   districts: [],
+  city: '',
+  district: '',
 })
 
 export const actions = {
@@ -14,6 +16,12 @@ export const actions = {
       this.commit('area/setDistricts', res.data.data)
     })
   },
+  async setCity(state, city) {
+    this.commit('area/setCity', city)
+  },
+  async setDistrict(state, district) {
+    this.commit('area/setDistrict', district)
+  },
 }
 
 export const mutations = {
@@ -22,5 +30,11 @@ export const mutations = {
   },
   setDistricts(state, value) {
     state.districts = value
+  },
+  setCity(state, value) {
+    state.city = value
+  },
+  setDistrict(state, value) {
+    state.district = value
   },
 }
