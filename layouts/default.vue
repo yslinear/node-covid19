@@ -73,13 +73,13 @@ export default {
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
+          title: '首頁',
           to: '/',
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
+          icon: 'mdi-medical-bag',
+          title: '快篩試劑查詢',
+          to: '/fst',
         },
       ],
       miniVariant: false,
