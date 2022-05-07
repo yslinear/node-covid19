@@ -7,13 +7,13 @@ export const actions = {
     this.$axios
       .get(`/api/v1/hospitals?city=${city}&district=${district}`)
       .then((res) => {
-        this.commit('hospital/sethospitals', res.data.data.lists)
+        this.commit('hospital/SET_HOSPITALS', res.data.data.lists)
       })
   },
 }
 
 export const mutations = {
-  sethospitals(state, value) {
+  SET_HOSPITALS(state, value) {
     state.list = value
   },
 }
