@@ -8,12 +8,8 @@
 </template>
 
 <script>
-import AreaFilter from '~/components/AreaFilter.vue'
-import HospitalTable from '~/components/HospitalTable.vue'
-
 export default {
   name: 'FstPage',
-  components: { AreaFilter, HospitalTable },
   watch: {
     '$store.state.area.city': function (newCity) {
       this.$store.dispatch('area/fetchDistricts', newCity)

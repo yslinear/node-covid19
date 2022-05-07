@@ -4,7 +4,13 @@
     :items="hospitals"
     item-key="name"
     class="elevation-1"
-  ></v-data-table>
+  >
+    <template #item.Name="{ item }">
+      <a :href="`/fst/hospital/${item.Code}`" target="_blank">
+        {{ item.Name }}
+      </a>
+    </template>
+  </v-data-table>
 </template>
 
 <script>
