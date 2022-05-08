@@ -3,7 +3,7 @@
     <v-col cols="12" sm="8" md="6" class="text-center">
       <v-card>
         <v-card-title class="headline justify-center">
-          歡迎來到 covid 19 查詢系統
+          歡迎來到 COVID-19 查詢系統
         </v-card-title>
         <v-card-text>
           <p>
