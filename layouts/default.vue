@@ -26,7 +26,7 @@
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title v-text="currentRouteTitle" />
+      <v-toolbar-title v-text="toolbarTitle" />
       <v-spacer />
     </v-app-bar>
     <v-main>
@@ -52,11 +52,13 @@ export default {
       fixed: false,
       items: [
         {
+          name: 'index',
           icon: 'mdi-home-variant',
           title: '首頁',
           to: '/',
         },
         {
+          name: 'fst',
           icon: 'mdi-test-tube',
           title: '快篩試劑查詢',
           to: '/fst',
@@ -66,8 +68,14 @@ export default {
     }
   },
   computed: {
-    currentRouteTitle() {
-      return this.$route.name
+    toolbarTitle() {
+      const name = this.$route.name
+      const result = this.items.find((item) => {
+        if (item.name === name) {
+          return item.title
+        }
+      })
+      return result ? result.title : ''
     },
   },
 }
