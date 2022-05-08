@@ -67,23 +67,9 @@
 
 <script>
 export default {
-  props: ['hospitalCode'],
-  mounted() {
-    this.fetchhospitalData()
-  },
+  props: ['hospitalData'],
   data() {
     return {
-      hospitalData: {
-        fst: [
-          {
-            UpdatedAt: '',
-            Brand: '',
-            Amount: '',
-            Remark: '',
-          },
-        ],
-        info: '',
-      },
       chartData: {
         labels: [],
         datasets: [
@@ -100,65 +86,18 @@ export default {
       chartOptions: {
         aspectRatio: 1.5,
         maintainAspectRatio: false,
-        scales: {
-          xAxes: [
-            {
-              type: 'linear',
-              ticks: {
-                min: 0,
-                stepSize: 1,
-                max: 4,
-                // max: 40,
-                // min: 0,
-                // stepSize: 5,
-              },
-              scaleLabel: {
-                // display: true,
-                // labelString: 'min',
-              },
-            },
-          ],
-          yAxes: [
-            {
-              // display: true,
-              ticks: {
-                stepSize: 1,
-                precision: 0,
-                max: 100,
-                min: 0,
-                beginAtZero: true,
-              },
-              scaleLabel: {
-                display: true,
-              },
-            },
-          ],
-        },
       },
     }
   },
-  watch: {
-    hospitalData: {
-      handler() {
-        this.$emit('update:hospitalName', this.hospitalData.info.Name)
-        this.chartData.datasets[0].data = this.hospitalData.fst
-          .slice(0)
-          .reverse()
-          .map((item) => item.Amount)
-        this.chartData.labels = this.hospitalData.fst
-          .slice(0)
-          .reverse()
-          .map((item) => item.UpdatedAt)
-      },
-      deep: true,
-    },
-  },
-  methods: {
-    fetchhospitalData() {
-      this.$axios.get(`/api/v1/hospital/${this.hospitalCode}`).then((res) => {
-        this.hospitalData = res.data.data
-      })
-    },
+  mounted() {
+    this.chartData.datasets[0].data = this.hospitalData.fst
+      .slice(0)
+      .reverse()
+      .map((item) => item.Amount)
+    this.chartData.labels = this.hospitalData.fst
+      .slice(0)
+      .reverse()
+      .map((item) => item.UpdatedAt)
   },
 }
 </script>

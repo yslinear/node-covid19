@@ -1,10 +1,7 @@
 <template>
   <v-row>
     <v-col class="text-center">
-      <HospitalInfo
-        v-bind:hospitalCode="this.$route.params.code"
-        :hospitalName.sync="hospitalName"
-      />
+      <HospitalInfo :hospital-data="hospitalData" />
     </v-col>
   </v-row>
 </template>
@@ -18,9 +15,11 @@ export default {
     }
   },
   data() {
-    return {
-      hospitalName: '',
-    }
+    return {}
+  },
+  async asyncData({ route, $axios }) {
+    const { data } = await $axios.get(`/api/v1/hospital/${route.params.code}`)
+    return { hospitalData: data.data, hospitalName: data.data.info.Name }
   },
 }
 </script>
