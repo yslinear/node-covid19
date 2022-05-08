@@ -3,10 +3,10 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - node-covid19',
-    title: 'node-covid19',
+    titleTemplate: '%s - COVID-19',
+    title: 'COVID-19',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'zh-TW',
     },
     meta: [
       { charset: 'utf-8' },

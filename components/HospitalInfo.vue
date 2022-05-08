@@ -140,6 +140,7 @@ export default {
   watch: {
     hospitalData: {
       handler() {
+        this.$emit('update:hospitalName', this.hospitalData.info.Name)
         this.chartData.datasets[0].data = this.hospitalData.fst
           .slice(0)
           .reverse()

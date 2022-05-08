@@ -45,6 +45,11 @@
 <script>
 export default {
   name: 'DefaultLayout',
+  head() {
+    return {
+      title: this.toolbarTitle,
+    }
+  },
   data() {
     return {
       clipped: false,
