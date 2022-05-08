@@ -81,7 +81,10 @@ export default {
   build: {},
 
   server: {
-    port: 8080,
+    server: {
+      host: process.env.NUXT_HOST,
+      port: process.env.NUXT_PORT,
+    },
   },
 
   publicRuntimeConfig: {
