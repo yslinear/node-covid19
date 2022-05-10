@@ -36,7 +36,13 @@
     </v-main>
     <v-footer :absolute="!fixed" app>
       <v-col class="text-center" cols="12">
-        {{ new Date().getFullYear() }} — <strong>yslinear.dev</strong>
+        {{ new Date().getFullYear() }} — Build with
+        <v-icon size="20px">mdi-coffee</v-icon> by
+        <strong
+          ><a href="https://yslinear.dev/about/" target="__blank"
+            >Ying-Shan Lin</a
+          ></strong
+        >
       </v-col>
     </v-footer>
   </v-app>
