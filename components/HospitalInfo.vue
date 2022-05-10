@@ -11,7 +11,7 @@
               <p class="text-h3 text--primary">
                 {{ hospitalData.fst[0].Brand }}
               </p>
-              <p class="text-h6 text--secondary">
+              <p class="text-h5 text--secondary">
                 {{ hospitalData.fst[0].Remark }}
               </p>
               <p class="text--secondary">
