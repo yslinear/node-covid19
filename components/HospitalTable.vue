@@ -6,9 +6,9 @@
     class="elevation-1"
   >
     <template #item.Name="{ item }">
-      <a :href="`/fst/hospital/${item.Code}`" target="_blank">
+      <nuxt-link :to="`/fst/hospital/${item.Code}`">
         {{ item.Name }}
-      </a>
+      </nuxt-link>
     </template>
   </v-data-table>
 </template>
