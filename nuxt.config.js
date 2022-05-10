@@ -86,8 +86,8 @@ export default {
       'utc', // import 'dayjs/plugin/utc'
       'timezone', // import 'dayjs/plugin/timezone'
       'localizedFormat',
-      'relativeTime'
-    ] // Your Day.js plugin
+      'relativeTime',
+    ], // Your Day.js plugin
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

@@ -15,7 +15,9 @@
                 {{ hospitalData.fst[0].Remark }}
               </p>
               <p class="text--secondary">
-                本網站最後更新日期：{{ $dayjs(hospitalData.fst[0].UpdatedAt).format('LLL') }}
+                本網站最後更新日期：{{
+                  $dayjs(hospitalData.fst[0].UpdatedAt).format('LLL')
+                }}
               </p>
             </v-card-text>
           </v-card>
