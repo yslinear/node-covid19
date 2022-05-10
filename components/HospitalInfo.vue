@@ -2,7 +2,7 @@
   <div>
     <v-container fluid>
       <v-row dense>
-        <v-col xl="6" lg="6" md="12" sm="12" xs="12">
+        <v-col cols="12" xl="6" lg="6">
           <v-card height="100%" class="d-flex align-center justify-center">
             <v-card-text>
               <p class="text-h1 text--primary">
@@ -22,7 +22,7 @@
             </v-card-text>
           </v-card>
         </v-col>
-        <v-col xl="6" lg="6" md="12" sm="12" xs="12">
+        <v-col cols="12" xl="6" lg="6">
           <v-card height="100%" class="d-flex align-center justify-center">
             <v-card-text>
               <p class="text-h3 text--primary">
