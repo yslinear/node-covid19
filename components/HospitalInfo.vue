@@ -84,8 +84,17 @@ export default {
         ],
       },
       chartOptions: {
-        aspectRatio: 1.5,
+        aspectRatio: 1,
         maintainAspectRatio: false,
+        responsive: true,
+        scales: {
+          x: {},
+          y: {
+            ticks: {
+              stepSize: 5,
+            },
+          },
+        },
       },
     }
   },
