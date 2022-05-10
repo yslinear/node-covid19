@@ -15,7 +15,7 @@
                 {{ hospitalData.fst[0].Remark }}
               </p>
               <p class="text--secondary">
-                本網站最後更新日期：{{ hospitalData.fst[0].UpdatedAt }}
+                本網站最後更新日期：{{ $dayjs(hospitalData.fst[0].UpdatedAt).format('LLL') }}
               </p>
             </v-card-text>
           </v-card>
@@ -97,7 +97,7 @@ export default {
     this.chartData.labels = this.hospitalData.fst
       .slice(0)
       .reverse()
-      .map((item) => item.UpdatedAt)
+      .map((item) => this.$dayjs(item.UpdatedAt).fromNow())
   },
 }
 </script>

@@ -43,6 +43,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
+    '@nuxtjs/dayjs',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -75,6 +76,18 @@ export default {
         },
       },
     },
+  },
+
+  dayjs: {
+    locales: ['zh-tw'],
+    defaultLocale: 'zh-tw',
+    defaultTimeZone: 'Asia/Taipei',
+    plugins: [
+      'utc', // import 'dayjs/plugin/utc'
+      'timezone', // import 'dayjs/plugin/timezone'
+      'localizedFormat',
+      'relativeTime'
+    ] // Your Day.js plugin
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
