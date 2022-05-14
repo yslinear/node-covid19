@@ -1,5 +1,3 @@
-import colors from 'vuetify/es5/util/colors'
-
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -22,6 +20,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/vuetify',
     '~/plugins/axios',
     '~/plugins/vue-gtag',
     {
@@ -44,6 +43,7 @@ export default {
     download: true,
     inject: true,
     overwriting: false,
+    display: 'swap',
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -70,17 +70,7 @@ export default {
   },
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    defaultAssets: {
-      font: {
-        family: 'Noto Sans TC',
-      },
-      icons: 'mdi',
-    },
-    customVariables: ['~/assets/variables.scss'],
-    theme: {
-      dark: false,
-      options: { variations: false },
-    },
+    defaultAssets: false,
   },
 
   dayjs: {
@@ -102,7 +92,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    analyze: true,
     extractCSS: true,
     optimization: {
       splitChunks: {
