@@ -36,19 +36,20 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     ['@nuxtjs/vuetify', { treeShake: true }],
-    '@nuxtjs/google-fonts',
   ],
 
   googleFonts: {
     download: true,
-    inject: true,
-    overwriting: false,
     display: 'swap',
+    families: {
+      'Noto+Sans+TC': true,
+    },
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
+    '@nuxtjs/google-fonts',
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
     '@nuxtjs/dayjs',
@@ -70,6 +71,7 @@ export default {
   },
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
+    customVariables: ['~/assets/variables.scss'],
     defaultAssets: false,
   },
 
