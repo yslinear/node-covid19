@@ -70,7 +70,12 @@ export default {
   },
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    defaultAssets: false,
+    defaultAssets: {
+      font: {
+        family: 'Noto Sans TC',
+      },
+      icons: 'mdi',
+    },
     customVariables: ['~/assets/variables.scss'],
     theme: {
       dark: false,
