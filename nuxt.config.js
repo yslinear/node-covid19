@@ -45,6 +45,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
     '@nuxtjs/dayjs',
+    '@nuxtjs/sitemap',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -89,6 +90,11 @@ export default {
       'localizedFormat',
       'relativeTime',
     ], // Your Day.js plugin
+  },
+
+  sitemap: {
+    gzip: true,
+    trailingSlash: true,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
