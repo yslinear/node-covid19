@@ -6,17 +6,17 @@
           <v-card height="100%" class="d-flex align-center justify-center">
             <v-card-text>
               <p class="text-h1 text--primary">
-                {{ hospitalData.fst[0].Amount }}
+                {{ hospitalData.fsts[0].Amount }}
               </p>
               <p class="text-h3 text--primary">
-                {{ hospitalData.fst[0].Brand }}
+                {{ hospitalData.fsts[0].Brand }}
               </p>
               <p class="text-h5 text--secondary">
-                {{ hospitalData.fst[0].Remark }}
+                {{ hospitalData.fsts[0].Remark }}
               </p>
               <p class="text--secondary">
                 本網站最後更新日期：{{
-                  $dayjs(hospitalData.fst[0].UpdatedAt).format('LLL')
+                  $dayjs(hospitalData.fsts[0].UpdatedAt).format('LLL')
                 }}
               </p>
             </v-card-text>
@@ -101,11 +101,11 @@ export default {
     }
   },
   mounted() {
-    this.chartData.datasets[0].data = this.hospitalData.fst
+    this.chartData.datasets[0].data = this.hospitalData.fsts
       .slice(0)
       .reverse()
       .map((item) => item.Amount)
-    this.chartData.labels = this.hospitalData.fst
+    this.chartData.labels = this.hospitalData.fsts
       .slice(0)
       .reverse()
       .map((item) => this.$dayjs(item.UpdatedAt).fromNow())
